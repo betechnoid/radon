@@ -26,5 +26,22 @@ let year=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Augus
     res.send('My first ever api!')
 });
 
+router.get('/candidates', function(req, res){
+    let candidates =['Akash', 'suman']
+    res.send(candidates)
+});
+
+router.get("/sol1", function (req, res) {
+    //logic : sum of numbers is n(n+1)/2..so get sum of all numbers in array. now take sum of numbers till last digit in the array
+    let arr= [1,2,3,5,6,7]
+    let n=7;
+    let sumof= (n(n+1)/2);
+    let missingNumber
+
+    ///LOGIC WILL GO HERE 
+    res.send(  { data: missingNumber  }  );
+})
+
+
 module.exports = router;
 // adding this comment for no reason
