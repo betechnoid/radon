@@ -1,4 +1,6 @@
 const express = require('express');
+const lodash=require('lodash');
+
 const externalModule = require('../logger/logger.js')
 const externalModul = require('../util/helper.js')
 const externalModu = require('../validator/formatter.js')
@@ -13,7 +15,14 @@ router.get('/test-me', function (req, res) {
     console.log(externalModu.trimming)
     console.log(externalModu.rupper)
     console.log(externalModu.lower)
+
+    res.send('My first ever api!')
+});
+
+router.get('/hello', function (req, res) {
     
+let year=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    console.log(lodash.chunk(year, 3))
     res.send('My first ever api!')
 });
 
