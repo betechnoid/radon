@@ -30,6 +30,16 @@ router.get('/candidates', function(req, res){
     res.send(candidates)
 })
 
+router.get('/movies', function(req, res){
+    let movies=['Rang de basanti', 'The shining', 'Lord of the rings', 'Batman begins'];
+    let search=function find(){
+
+    }
+
+    console.log(movies)
+    res.send(movies)
+})
+
 router.get('/candidates/:canidatesName', function(req, res){
     console.log('The request objects is '+ JSON.stringify(req.params))
     console.log('Candidates name is '+req.params.canidatesName)
