@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const ObjectId = mongoose.Schema.Types.ObjectId
 
 const bookSchema = new mongoose.Schema( {
-    name: String,
+    name: String, 
     author_id: {
         type: ObjectId,
         ref: "newAuthor"
@@ -14,7 +14,7 @@ const bookSchema = new mongoose.Schema( {
         ref:"newPublisher"
     }
 
-
+ 
 }, { timestamps: true });
 
 
