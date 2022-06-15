@@ -57,15 +57,14 @@ const updateUser = async function (req, res) {
   res.send({ msg:updatedUser });
 };
 
-const dUser= async function (req, res){
+const deleteUser= async function (req, res){
   let userId = req.params.userId;
   let user = await userModel.findById(userId);
   if (!user) {
     return res.send("No such user exists");
   }
-  let userData = req.body;
-  let deleteUser = await userModel.deleteOne
-  ({ _id: userId }, userData);
+  // let userData = req.body;
+  let deleteUser = await userModel.findByIdAndUpdate({ _id: userId }, {$set:{isDelete:true}}, {new:true});
   res.send({ msg:deleteUser });
 }
 
@@ -74,4 +73,4 @@ module.exports.createUser = createUser;
 module.exports.getUserData = getUserData;
 module.exports.updateUser = updateUser;
 module.exports.loginUser = loginUser;
-module.exports.dUser= dUser;
+module.exports.deleteUser= deleteUser;

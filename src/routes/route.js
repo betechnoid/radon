@@ -9,9 +9,10 @@ router.get("/test-me", function (req, res) {
 
 router.post("/users", userController.createUser)
 router.post("/login", userController.loginUser)
+router.delete("/users/:userId",authuser.authorise, userController.deleteUser)
+router.get("/users/:userId",authuser.authorise, userController.getUserData)
 
-router.get("/users/:userId",authuser.auth, userController.getUserData)
+router.put("/users/:userId", authuser.authorise,userController.updateUser);
 
-router.put("/users/:userId", authuser.auth,userController.updateUser)
-// router.delete("/users:userId",authuser.auth, userController.dUser)
-module.exports = router;
+
+module.exports = router; 
